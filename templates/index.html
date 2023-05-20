@@ -13,7 +13,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Goid</title>
+  <title>ArtyProd</title>
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
@@ -38,12 +38,15 @@
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container">
           <a class="navbar-brand" href="index.html">
-            <img src="" alt="" />
+            <img src="{% static 'images/logoo.png'%}" alt="" />
             <span>
-              Goid
+              ArtyProd
             </span>
           </a>
-
+          <div class="auth">
+            <a href="index.html" class="mx-3">Sign Up</a>
+            <a href="index.html">Sign In</a>
+          </div>
           <div class="navbar-collapse" id="">
             <div class="custom_menu-btn">
               <button onclick="openNav()">
@@ -52,12 +55,14 @@
                 <span class="s-3"> </span>
               </button>
             </div>
+
             <div id="myNav" class="overlay">
               <div class="overlay-content">
                 <a href="index.html">HOME</a>
                 <a href="about.html">ABOUT</a>
-                <a href="food.html">Food</a>
-                <a href="contact.html">Contact Us</a>
+                <a href="food.html">SERVICES</a>
+                <a href="food.html">TEAM</a>
+                <a href="contact.html">CONTACT US</a>
               </div>
             </div>
           </div>
@@ -69,17 +74,17 @@
     <section class=" slider_section position-relative">
       <div class="side_heading">
         <h5>
-          G
-          o
-          o
-          d
-          F
-          o
-          o
-          d
+          A
+          R
+          T
+          Y
+          P
+          R
+          O
+          D
         </h5>
       </div>
-      <div class="container-fluid">
+      <div class="container-fluid mt-4">
         <div class="row">
           <div class="col-lg-3 col-md-4 offset-md-1">
             <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
@@ -99,23 +104,23 @@
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <div class="img-box b-1">
-                    <img src="../images/about-img.jpg" alt="" />
+                  <div class="img-box w-75 b-1">
+                    <img src="{% static 'images/video-content.png'%}" alt="" />
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="img-box b-2">
-                    <img src="../images/about-img.jpg" alt="" />
+                  <div class="img-box w-75 b-2">
+                    <img src="{% static 'images/editor.png'%}" alt="" />
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="img-box b-3">
-                    <img src="images/hot-2.png" alt="" />
+                  <div class="img-box w-75 b-3">
+                    <img src="{% static 'images/webcam.png'%}" alt="" />
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="img-box b-4">
-                    <img src="images/hot-3.png" alt="" />
+                  <div class="img-box w-75 b-4">
+                    <img src="{% static 'images/user.png'%}" alt="" />
                   </div>
                 </div>
               </div>
@@ -133,20 +138,20 @@
             <div class="detail-box">
               <h1>
                 Good <br>
-                Food
+                Prod
               </h1>
               <p>
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                alteration in some form, by injected humour, or randomised words
+                ArtyProd is a dynamic agency that excels in graphic design, audiovisual production, and 3D conception,
+                offering a comprehensive range of services to meet diverse creative needs. With a team of talented
+                designers, videographers, and 3D artists, ArtyProd brings imagination to life through stunning visual
+                creations
               </p>
 
               <div class="btn-box">
-                <a href="" class="btn-1">
+                <a href="" class="btn-1 rounded-pill">
                   Contact Us
                 </a>
-                <a href="" class="btn-2">
-                  Order Now
-                </a>
+
               </div>
 
             </div>
@@ -163,27 +168,27 @@
       <div class="row">
         <div class="col-md-5 offset-md-1">
           <div class="detail-box">
-            <div class="heading_container">
+            <div class="heading_container mt-5">
               <h2>
                 About <br>
-                Our <br>
-                Food
+                Our<br> Team
               </h2>
               <hr>
             </div>
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in
-              some form, by injected humour, or randomised words
+              The team at ArtyProd is a diverse and talented group of professionals who are passionate about their
+              respective fields and share a common goal of delivering exceptional creative work. Comprised of graphic
+              designers, videographers, 3D artists, and other creative specialists, each team member brings a unique set
+              of skills and expertise to the agency.
             </p>
-            <a href="">
+            <a href="" class="rounded-pill">
               Read More
             </a>
           </div>
         </div>
         <div class="col-md-6 px-0">
-          <div class="img-box">
-            <img src="images/about-img.jpg" alt="">
+          <div class="img-box ">
+            <img src="{% static 'images/aboutUs.jpg'%}" class="w-50 rounded imgau mt-5" alt="">
           </div>
         </div>
       </div>
@@ -192,43 +197,26 @@
 
   <!-- end about section -->
 
-  <!-- dish section -->
+  <!-- services section -->
 
-  <section class="dish_section layout_padding">
-    <div class="container">
+  <section class="dish_section layout_padding mt-5">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-md-6">
-          <div class="dish_container">
-            <div class="box">
-              <img src="images/dish.jpg" alt="">
-            </div>
-            <div class="box">
-              <img src="images/dish.jpg" alt="">
-            </div>
-            <div class="box">
-              <img src="images/dish.jpg" alt="">
-            </div>
-            <div class="box">
-              <img src="images/dish.jpg" alt="">
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
+        <div class="col-md-12">
+          <div class="detail-box text-center">
+            <div class="heading_container services">
               <hr>
               <h2>
                 Our <br>
-                Food <br>
-                dishs
+                Services <br>
               </h2>
+              <hr>
             </div>
-            <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in
-              some form, by injected humour, or randomised words
+            <p class="pservices">
+              ArtyProd offers a wide range of services that cater to the diverse needs of its clients in the fields of
+              graphic design, audiovisual production, and 3D conception
             </p>
-            <a href="">
+            <a href="" class="rounded-pill btnservices">
               Read More
             </a>
           </div>
@@ -245,12 +233,13 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          What's Hot
+          Our Latest Projects
         </h2>
         <hr>
       </div>
       <p>
-        There are many variations of passages of Lorem Ipsum available, but the majority
+        ArtyProd Agency has an impressive portfolio of projects that showcase their expertise in graphic design,
+        audiovisual production, and 3D conception
       </p>
     </div>
     <div class="carousel_container">
@@ -260,54 +249,42 @@
             <div class="item">
               <div class="box">
                 <div class="img-box">
-                  <img src="images/hot-1.png" />
+                  <img src="{% static 'images/Fashion-Marketing-Video.jpg'%}" />
                 </div>
                 <div class="detail-box">
-                  <h4>
-                    $30
-                  </h4>
+                 
                   <p>
-                    There are many variations of passages of Lorem Ipsum available,
+                    Video Commercial for a Fashion Brand
                   </p>
-                  <a href="">
-                    Order Now
-                  </a>
+                
                 </div>
               </div>
             </div>
             <div class="item">
               <div class="box">
                 <div class="img-box">
-                  <img src="images/hot-2.png" />
+                  <img src="{% static 'images/original.webp'%}" />
                 </div>
                 <div class="detail-box">
-                  <h4>
-                    $30
-                  </h4>
+                 
                   <p>
-                    There are many variations of passages of Lorem Ipsum available,
+                    Graphic Design and Packaging for a Food Product
                   </p>
-                  <a href="">
-                    Order Now
-                  </a>
+                 
                 </div>
               </div>
             </div>
             <div class="item">
               <div class="box">
                 <div class="img-box">
-                  <img src="images/hot-3.png" />
+                  <img src="{% static 'images/large_6873c039e4e15cd46f39277a22830aa4.jpg'%}" />
                 </div>
                 <div class="detail-box">
-                  <h4>
-                    $30
-                  </h4>
+               
                   <p>
-                    There are many variations of passages of Lorem Ipsum available,
+                    Illustrations for a Children's Book
                   </p>
-                  <a href="">
-                    Order Now
-                  </a>
+           
                 </div>
               </div>
             </div>
@@ -321,38 +298,7 @@
 
   <!-- app section -->
 
-  <section class="app_section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="img-box">
-            <img src="images/man-with-phone.png" alt="">
-          </div>
-        </div>
-        <div class="col-md-6 offset-md-2">
-          <div class="detail-box">
-            <h2>
-              <span> 50% </span> off On every food
-              download now our app
-            </h2>
-            <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in
-              some form, by
-            </p>
-            <div class="btn-box">
-              <a href="">
-                <img src="images/app-store.png" alt="">
-              </a>
-              <a href="">
-                <img src="images/play-store.png" alt="">
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- end app section -->
 
@@ -378,10 +324,10 @@
             <div class="box ">
               <div class="client_id">
                 <div class="img-box">
-                  <img src="images/client.png" alt="" class="img-fluid">
+                  <img src="{% static 'images/emna.png'%}" alt="" class="img-fluid w-25 rounded-pill">
                 </div>
                 <h4>
-                  Jacksmith sand
+                  Emna Abbes
                 </h4>
               </div>
               <div class="detail-box">
@@ -397,10 +343,10 @@
             <div class="box ">
               <div class="client_id">
                 <div class="img-box">
-                  <img src="images/client.png" alt="" class="img-fluid">
+                  <img src="{% static 'images/mohamed.jpg'%}" alt="" class="img-fluid w-25 rounded-pill">
                 </div>
                 <h4>
-                  Jacksmith sand
+                 Mohamed Ben Amar
                 </h4>
               </div>
               <div class="detail-box">
@@ -416,10 +362,10 @@
             <div class="box ">
               <div class="client_id">
                 <div class="img-box">
-                  <img src="images/client.png" alt="" class="img-fluid">
+                  <img src="{% static 'images/khouloud.jpg'%}" alt="" class="img-fluid w-25 rounded-pill">
                 </div>
                 <h4>
-                  Jacksmith sand
+                  Khouloud Bdiri
                 </h4>
               </div>
               <div class="detail-box">
@@ -435,10 +381,10 @@
             <div class="box ">
               <div class="client_id">
                 <div class="img-box">
-                  <img src="images/client.png" alt="" class="img-fluid">
+                  <img src="{% static 'images/mariem.jpg'%}" alt="" class="img-fluid w-25 rounded-pill">
                 </div>
                 <h4>
-                  Jacksmith sand
+                  Mariem Ben Slim
                 </h4>
               </div>
               <div class="detail-box">
@@ -448,6 +394,8 @@
                   some form, by injected humour, or randomised words which .
                 </p>
               </div>
+            </div>
+          </div>
             </div>
           </div>
         </div>
@@ -482,7 +430,7 @@
           <div class="contact_box">
             <a href="">
               <div class="img-box">
-                <img src="images/location.png" alt="">
+                <img src="../images/location.png" alt="">
               </div>
               <h6>
                 Gb road 123 london Uk
@@ -490,7 +438,7 @@
             </a>
             <a href="">
               <div class="img-box">
-                <img src="images/call.png" alt="">
+                <img src="../images/call.png" alt="">
               </div>
               <h6>
                 (+01) 123456789012
@@ -498,7 +446,7 @@
             </a>
             <a href="">
               <div class="img-box">
-                <img src="images/envelope.png" alt="">
+                <img src="../images/envelope.png" alt="">
               </div>
               <h6>
                 demo@gmail.com
@@ -546,23 +494,20 @@
       </h4>
       <div class="social-box">
         <a href="">
-          <img src="images/fb.png" alt="">
+          <img src="../images/fb.png" alt="">
         </a>
         <a href="">
-          <img src="images/twitter.png" alt="">
+          <img src="../images/twitter.png" alt="">
         </a>
         <a href="">
-          <img src="images/linkedin.png" alt="">
+          <img src="../images/linkedin.png" alt="">
         </a>
         <a href="">
-          <img src="images/youtube.png" alt="">
+          <img src="../images/youtube.png" alt="">
         </a>
       </div>
     </div>
-    <p>
-      &copy; 2019 All Rights Reserved. Design by
-      <a href="https://html.design/">Free Html Templates</a>
-    </p>
+
   </section>
   <!-- footer section -->
 

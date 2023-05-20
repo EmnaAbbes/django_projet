@@ -381,7 +381,7 @@ a:focus {
   top: 26px;
   width: 30%;
   height: 5px;
-  background-color: #10e276;
+  background-color: #f3587f;
 }
 
 .slider_section #carouselExampleIndicators {
@@ -963,3 +963,20 @@ a:focus {
   color: #ffffff;
 }
 /*# sourceMappingURL=style.css.map */
+.imgau{
+  margin-left: 130px;
+}
+.auth{
+  margin-left:850px;
+  margin-top: 15px;
+  
+}
+.services{
+  margin-right: 350px;
+}
+.pservices{
+  margin-right: 100px;
+}
+.btnservices{
+  margin-right: 150px;
+}
