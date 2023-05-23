@@ -46,6 +46,8 @@
                         </span>
                     </a>
                     <div class="auth">
+                        {% if user.is_authenticated %}
+                        <a class="nav-link" href="#">{{user}},</a>
                         <a href="index.html" class="mx-3">Sign Up</a>
                         <a href="index.html">Sign In</a>
                     </div>
