@@ -14,7 +14,7 @@ class Projet(models.Model):
     date_debut = models.DateField()
     date_fin = models.DateField()
     acheve = models.CharField(max_length=1, choices=(('o', 'Oui'), ('n', 'Non')))
-    image=models.ImageField(upload_to='projet/')
+    image=models.ImageField(default='default_image.jpg',upload_to='projet/')
     def __str__(self):
         return self.libelle
 
