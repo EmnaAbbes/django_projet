@@ -1,15 +1,15 @@
 {% load static %}
 {% include 'myapp/base.html' %}
-
+{% load crispy_forms_tags %}
 <!-- about section -->
 
 <!-- about section -->
-<section class="about_section layout_padding">
+<section class="about_section layout_padding d-flex justify-content-center align-items-center">
     <div class="col-md-7">
         <div class="form_container">
             <form method='POST' class="post-form ms-5 me-5 mt-3 mb-3 p-4 rounded" style="border:#afa6a6 2px solid; ">
                 {% csrf_token %}
-                {{form}}
+                {{form | crispy}}
                 <button type="submit" class="btn btn-danger">Enregistrer</button>
             </form>
         </div>

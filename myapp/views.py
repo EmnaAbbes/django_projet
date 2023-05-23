@@ -20,10 +20,12 @@ def services(request):
 def team(request):
     list = Personnel.objects.all()
     return render(request,'myapp/team.html',{'list':list})
+@login_required
 def project(request):
     list = Projet.objects.all()
     print(list)
     return render(request,'myapp/project.html',{'list':list})
+@login_required
 def details(request,id):
     list = get_object_or_404(Details, projetID=id)
     return render(request,'myapp/projectDetails.html',{'list':list})
