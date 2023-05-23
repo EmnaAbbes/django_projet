@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp.apps.MyappConfig',
 ]
-
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -129,3 +130,5 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = STATICFILES_DIRS = [
     BASE_DIR / "static", '/var/www/static/', ]
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'

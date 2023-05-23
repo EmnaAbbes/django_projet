@@ -1,0 +1,33 @@
+{% extends "myapp/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<body>
+<div style="border: #afa6a6 2px solid;" class=" mt-5 rounded p-4 w-50 text-center loginForm ms-5 ">
+<h2>Se connecter </h2>
+<div>
+    <form method="post" class="p-3">
+        {% csrf_token %}
+        {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+        <p class="alert alert-danger">{{ error }}</p>
+        {% endfor %}
+        {% endif %}
+        
+                <div class="">{{ form|crispy }}</div>
+        <button type="submit" class="btn btn-danger mt-3">se connecter</button>
+    </form>
+</div>
+<div>
+    <small>
+        Pas encore inscrit.e?
+        <a href="{% url 'register' %}"> S'inscrire </a>
+        <br>
+        Mot de passe oublié ?
+        <a href="#">
+            Renouveler mon mot de passe
+        </a>
+    </small>
+</div>
+</div>
+</body>
+{% endblock %}
