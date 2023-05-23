@@ -58,11 +58,11 @@
 
             <div id="myNav" class="overlay">
               <div class="overlay-content">
-                <a href="index.html">HOME</a>
-                <a href="about.html">ABOUT</a>
-                <a href="food.html">SERVICES</a>
-                <a href="food.html">TEAM</a>
-                <a href="contact.html">CONTACT US</a>
+                <a href="{% url 'index'%}">HOME</a>
+                <a href="{% url 'services'%}">OUR SERVICES</a>
+                <a href="{% url 'team'%}">OUR TEAM</a>
+                <a href="{% url 'project'%}">Our PROJECTS</a>
+                <a href="">CONTACT US</a>
               </div>
             </div>
           </div>
@@ -252,11 +252,11 @@
                   <img src="{% static 'images/Fashion-Marketing-Video.jpg'%}" />
                 </div>
                 <div class="detail-box">
-                 
+
                   <p>
                     Video Commercial for a Fashion Brand
                   </p>
-                
+
                 </div>
               </div>
             </div>
@@ -266,11 +266,11 @@
                   <img src="{% static 'images/original.webp'%}" />
                 </div>
                 <div class="detail-box">
-                 
+
                   <p>
                     Graphic Design and Packaging for a Food Product
                   </p>
-                 
+
                 </div>
               </div>
             </div>
@@ -280,11 +280,11 @@
                   <img src="{% static 'images/large_6873c039e4e15cd46f39277a22830aa4.jpg'%}" />
                 </div>
                 <div class="detail-box">
-               
+
                   <p>
                     Illustrations for a Children's Book
                   </p>
-           
+
                 </div>
               </div>
             </div>
@@ -298,7 +298,7 @@
 
   <!-- app section -->
 
-  
+
 
   <!-- end app section -->
 
@@ -317,30 +317,15 @@
           <li data-target="#carouselExample2Indicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExample2Indicators" data-slide-to="1"></li>
           <li data-target="#carouselExample2Indicators" data-slide-to="2"></li>
-          <li data-target="#carouselExample2Indicators" data-slide-to="3"></li>
+
         </ol>
         <div class="carousel-inner">
+
           <div class="carousel-item active">
-            <div class="box ">
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="box ">
-             
-              <div class="detail-box">
-                <p>
-                  There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                  alteration in
-                  some form, by injected humour, or randomised words which .
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
             <div class="box ">
               <div class="client_id">
                 <div class="img-box">
-                  <img src="{% static 'images/khouloud.jpg'%}" alt="" class="img-fluid rounded-pill w-25">
+                  <img src="{% static 'images/khoukha.jpg'%}" alt="" class="img-fluid rounded-pill w-50">
                 </div>
                 <h4>
                   Khouloud Bdiri
@@ -348,9 +333,9 @@
               </div>
               <div class="detail-box">
                 <p>
-                  There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                  alteration in
-                  some form, by injected humour, or randomised words which .
+                  Working with ArtyProd Agency was an absolute pleasure. Their team of designers and creatives
+                  understood our vision from the start and transformed it into a stunning reality. The attention to
+                  detail, professionalism, and creativity they demonstrated throughout the project were exceptional
                 </p>
               </div>
             </div>
@@ -367,17 +352,35 @@
               </div>
               <div class="detail-box">
                 <p>
-                  There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                  alteration in
-                  some form, by injected humour, or randomised words which .
+                  I highly recommend ArtyProd Agency for their outstanding audiovisual production services. They
+                  produced a promotional video for our event that perfectly captured the essence and excitement of the
+                  occasion
                 </p>
               </div>
             </div>
           </div>
+          <div class="carousel-item">
+            <div class="box">
+              <div class="client_id">
+                <div class="img-box">
+                  <img src="{% static 'images/ahmed.png'%}" alt="" class="img-fluid rounded-pill w-50">
+                </div>
+                <h4>
+                  Ahmed Ben Ismail
+                </h4>
+              </div>
+              <div class="detail-box">
+                <p>
+                  ArtyProd's team was responsive, professional, and truly understood our project's requirements. We are
+                  extremely satisfied with their work and highly recommend them for any 3D design needs
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    </div>
 
     </div>
   </section>
@@ -408,26 +411,26 @@
           <div class="contact_box">
             <a href="">
               <div class="img-box">
-                <img src="../images/location.png" alt="">
+                <img src="{% static 'images/location.png'%}" alt="">
               </div>
               <h6>
-                Gb road 123 london Uk
+                Tunisie,Sfax
               </h6>
             </a>
             <a href="">
               <div class="img-box">
-                <img src="../images/call.png" alt="">
+                <img src="{% static 'images/call.png'%}" alt="">
               </div>
               <h6>
-                (+01) 123456789012
+                (+216) 27830454
               </h6>
             </a>
             <a href="">
               <div class="img-box">
-                <img src="../images/envelope.png" alt="">
+                <img src="{% static 'images/envelope.png'%}" alt="">
               </div>
               <h6>
-                demo@gmail.com
+                artyprod@gmail.com
               </h6>
             </a>
           </div>
@@ -436,57 +439,9 @@
     </div>
   </section>
 
-  <!-- end contact section -->
-
-  <!-- subscribe section -->
-
-  <section class="subscribe_section">
-    <div class="container">
-      <form action="">
-        <div class="row">
-          <div class="col-lg-3 col-md-4">
-            <label for="subEmail">
-              Our Newsletter
-            </label>
-          </div>
-          <div class="col-lg-9 col-md-8">
-            <div class="box">
-              <input type="email" placeholder="Enter your email" id="subEmail">
-              <button>
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <!-- end subscribe section -->
 
   <!-- footer section -->
-  <section class="container-fluid footer_section">
-    <div class="social_container">
-      <h4>
-        Follow on
-      </h4>
-      <div class="social-box">
-        <a href="">
-          <img src="../images/fb.png" alt="">
-        </a>
-        <a href="">
-          <img src="../images/twitter.png" alt="">
-        </a>
-        <a href="">
-          <img src="../images/linkedin.png" alt="">
-        </a>
-        <a href="">
-          <img src="../images/youtube.png" alt="">
-        </a>
-      </div>
-    </div>
-
-  </section>
+  {% include 'myapp/footer.html' %}
   <!-- footer section -->
 
   <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js'%}"></script>
