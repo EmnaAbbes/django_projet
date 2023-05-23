@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.contrib.auth.models import User
 
 class Service(models.Model):
     type = models.CharField(max_length=100)
@@ -39,7 +40,7 @@ class Personnel(models.Model):
 
 class Demande(models.Model):
     description=models.TextField()
-    #userID=models.ForeignKey(User, on_delete=models.CASCADE)
+    userID=models.ForeignKey(User, on_delete=models.CASCADE, default='')
     def __str__(self):
         return self.description
 
@@ -54,7 +55,7 @@ class Contact(models.Model):
 class Commentaire(models.Model):
     message=models.TextField()
     time=datetime.now()
-    #userID=models.ForeignKey(User, on_delete=models.CASCADE)
+    userID=models.ForeignKey(User, on_delete=models.CASCADE, default='')
     projetID=models.ForeignKey(Projet, on_delete=models.CASCADE)
     def __str__(self):
         return self.message

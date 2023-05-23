@@ -35,7 +35,10 @@ def equipe(request,id):
     return render(request,'myapp/equipe.html',{'list':list,'name':equipe.projetID.libelle})
 def newDemande(request):
     if request.method == "POST" :
-        form = DemandeForm(request.POST,request.FILES)
+        form=DemandeForm(request.POST,request.FILES)
+        demande = form.save(commit=False)
+        demande.userID = request.user
+        demande.save()
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/myapp')
