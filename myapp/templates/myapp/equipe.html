@@ -1,0 +1,80 @@
+{% load static %}
+{% include 'myapp/base.html' %}
+
+<!-- about section -->
+
+<!-- about section -->
+<section class="about_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="heading_container">
+                <h2 class="">
+                    {{name}}
+                </h2>
+                <hr>
+            </div>
+            <div class="row dish_container mt-5 justify-content-center">
+                {% for p in list %}
+                <div class="card me-5 mb-5" style="width: 15rem; ">
+                    <img src="/media/{{p.fichier_photo}}" class="card-img-top rounded ms-3 mt-3" alt="{{p.nom}}"
+                        style="height:250px;width:200px;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center cardtitle mb-3 fst-italic">{{p.nom}}</h5>
+                        <p class="card-text"><a href="/media/{{p.fichier_CV}}" download>CV</a></p>
+                        <p class="card-text"><a href="{{p.lien_linkedIn}}">Linkedin</a></p>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end about section -->
+
+
+
+<!-- footer section -->
+{% include 'myapp/footer.html' %}
+<!-- footer section -->
+
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+</script>
+
+<script>
+    function openNav() {
+        document.getElementById("myNav").classList.toggle("menu_width");
+        document
+            .querySelector(".custom_menu-btn")
+            .classList.toggle("menu_btn-style");
+    }
+</script>
+
+<!-- owl carousel script -->
+<script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 35,
+        navText: [],
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+        }
+    });
+</script>
+<!-- end owl carousel script -->
+
+</body>
+
+</html>

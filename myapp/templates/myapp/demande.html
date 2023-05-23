@@ -1,0 +1,64 @@
+{% load static %}
+{% include 'myapp/base.html' %}
+
+<!-- about section -->
+
+<!-- about section -->
+<section class="about_section layout_padding">
+    <div class="col-md-7">
+        <div class="form_container">
+            <form method='POST' class="post-form ms-5 me-5 mt-3 mb-3 p-4 rounded" style="border:#afa6a6 2px solid; ">
+                {% csrf_token %}
+                {{form}}
+                <button type="submit" class="btn btn-danger">Enregistrer</button>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- end about section -->
+
+
+
+<!-- footer section -->
+{% include 'myapp/footer.html' %}
+
+<script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.js'%}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+</script>
+
+<script>
+  function openNav() {
+    document.getElementById("myNav").classList.toggle("menu_width");
+    document
+      .querySelector(".custom_menu-btn")
+      .classList.toggle("menu_btn-style");
+  }
+</script>
+
+<!-- owl carousel script -->
+<script type="text/javascript">
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    margin: 35,
+    navText: [],
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 2
+      },
+      1000: {
+        items: 3
+      }
+    }
+  });
+</script>
+<!-- end owl carousel script -->
+
+</body>
+
+</html>
