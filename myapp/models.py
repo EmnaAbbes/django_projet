@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 class Service(models.Model):
     type = models.CharField(max_length=100)
@@ -13,9 +14,9 @@ class Projet(models.Model):
     date_debut = models.DateField()
     date_fin = models.DateField()
     acheve = models.CharField(max_length=1, choices=(('o', 'Oui'), ('n', 'Non')))
+    image=models.ImageField(upload_to='projet/')
     def __str__(self):
         return self.libelle
-
 
 class Details(models.Model):
     fichier = models.FileField(upload_to='details/')
@@ -35,3 +36,25 @@ class Personnel(models.Model):
     equipeID=models.ForeignKey(Equipe, on_delete=models.CASCADE)
     def __str__(self):
         return self.nom
+
+class Demande(models.Model):
+    description=models.TextField()
+    #userID=models.ForeignKey(User, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.description
+
+class Contact(models.Model):
+    nom=models.CharField(max_length=100)
+    Phone=models.CharField(max_length=20)
+    email=models.EmailField()
+    description=models.TextField()
+    def __str__(self):
+        return f"Contact: {self.nom} - Email: {self.email}"
+
+class Commentaire(models.Model):
+    message=models.TextField()
+    time=datetime.now()
+    #userID=models.ForeignKey(User, on_delete=models.CASCADE)
+    projetID=models.ForeignKey(Projet, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.message
