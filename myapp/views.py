@@ -1,9 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404,redirect
 from .models import Service,Personnel,Projet,Details,Equipe
-from .forms import DemandeForm,ContactForm
+from .forms import DemandeForm,ContactForm,UserRegistrationForm
 from django.http import HttpResponseRedirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, authenticate
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+@login_required
+def home(request):
+        context={'val':"Menu Acceuil"}
+        return HttpResponseRedirect('/myapp')
 def index(request):
     return render(request,'myapp/index.html')
 def services(request):
@@ -41,3 +49,17 @@ def Contact(request):
     else :
         form = ContactForm()
     return render(request,'myapp/contact.html',{'form':form})
+def register(request):
+    if request.method == 'POST' :
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)
+            login(request,user)
+            messages.success(request, f'Coucou {username}, Votre compte a été créé avec succès !')
+            return redirect('home')
+    else :
+        form = UserCreationForm()
+    return render(request,'registration/registration.html',{'form' : form})

@@ -1,10 +1,12 @@
-{% extends "magasin/base.html" %}
+{% include "myapp/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
+<div class="d-flex justify-content-center align-items-center" style="height: 150vh;"> 
+    <div style="border: #afa6a6 2px solid;" class="rounded p-4 w-50 text-center">
 <h2 class="m-5">Sign Up</h2>
 <form method="post">
     {% csrf_token %}
-    <table class="ms-5" style="border:#afa6a6 2px solid; ">
+    <table class="ms-5">
         <tr>
             <td class="p-4">
                 {{ form|crispy}}
@@ -21,8 +23,10 @@
 </form>
 <div class="ms-5 mt-3 mb-3">
     <small>
-        Déjà inscrit.e?
+        Already have an account?
         <a href="{% url 'login' %}" class="btn btn-danger">Sign In</a>
     </small>
+</div>
+</div>
 </div>
 {% endblock %}

@@ -1,39 +1,7 @@
+{% include "myapp/base.html" %}
+{% load crispy_forms_tags %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-  <title>ArtyProd</title>
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
-
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap"
-    rel="stylesheet" />
-
-  <!-- Custom styles for this template -->
-  <link href="{% static 'css/style.css'%}" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="{% static 'css/responsive.css'%}" rel="stylesheet" />
-</head>
-
 <body>
-  
-
   <section class="contact_section layout_padding-bottom ">
     <div class="container">
       <h2>
@@ -44,7 +12,7 @@
           <div class="form_container">
             <form method="post">
                 {% csrf_token %}
-                {{form}}
+                {{form | crispy}}
               <button>
                 Send
               </button>
@@ -54,24 +22,24 @@
         <div class="col-md-5">
           <div class="contact_box">
             <a href="">
-              <div class="img-box">
-                <img src="{% static 'images/location.png'%}" alt="">
+              <div class="img-box rounded">
+                <img src="{% static 'images/placeholder.png'%}" alt="">
               </div>
               <h6>
                 Tunisie,Sfax
               </h6>
             </a>
             <a href="">
-              <div class="img-box">
-                <img src="{% static 'images/call.png'%}" alt="">
+              <div class="img-box rounded">
+                <img src="{% static 'images/phone.png'%}" alt="">
               </div>
               <h6>
                 (+216) 27830454
               </h6>
             </a>
             <a href="">
-              <div class="img-box">
-                <img src="{% static 'images/envelope.png'%}" alt="">
+              <div class="img-box rounded">
+                <img src="{% static 'images/mail.png'%}" alt="">
               </div>
               <h6>
                 artyprod@gmail.com
