@@ -1,0 +1,73 @@
+{% load static %}
+{% include 'myapp/base.html' %}
+
+<!-- about section -->
+<section class="about_section layout_padding">
+    <div class="container">
+        <div class="">
+            <div class="detail-box">
+                <div class="heading_container">
+                    <h2 class="">
+                        {{list.projetID.libelle}}
+                    </h2>
+                    <hr>
+
+                </div>
+                <p class="fst-italic cardtitle">{{list.serviceID.type}}</p>
+                <div class="mb-5 "><a href="/media/{{list.fichier}}" download class="rounded-pill">Download
+                        project <i class="bi bi-download ms-3"></i></a></div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</section>
+
+<!-- end about section -->
+
+
+
+<!-- footer section -->
+{% include 'myapp/footer.html' %}
+<!-- footer section -->
+
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+</script>
+
+<script>
+    function openNav() {
+        document.getElementById("myNav").classList.toggle("menu_width");
+        document
+            .querySelector(".custom_menu-btn")
+            .classList.toggle("menu_btn-style");
+    }
+</script>
+
+<!-- owl carousel script -->
+<script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 35,
+        navText: [],
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+        }
+    });
+</script>
+<!-- end owl carousel script -->
+
+</body>
+
+</html>
