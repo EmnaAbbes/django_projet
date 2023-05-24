@@ -16,6 +16,7 @@ class Projet(models.Model):
     date_fin = models.DateField()
     acheve = models.CharField(max_length=1, choices=(('o', 'Oui'), ('n', 'Non')))
     image=models.ImageField(default='default_image.jpg',upload_to='projet/')
+    userID = models.ForeignKey(User, on_delete=models.CASCADE, default='')
     def __str__(self):
         return self.libelle
 

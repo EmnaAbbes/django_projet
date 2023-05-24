@@ -69,7 +69,10 @@
                 <a href="{% url 'project'%}">Our PROJECTS</a>
                 <a href="{% url 'contact'%}">CONTACT US</a>
                 {% if user.is_authenticated %}
+                {% if user.is_authenticated %}
                 <a href="{% url 'demande' %}">Request for project</a>
+                <a href="{% url 'projectUser' %}">Your project</a>
+                {% endif %}
                 {% endif %}
               </div>
             </div>

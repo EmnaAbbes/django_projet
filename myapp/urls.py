@@ -11,4 +11,6 @@ path('demande/',views.newDemande,name="demande"),
 path('contact/',views.Contact,name="contact"),
 path('register/',views.register,name="register"),
 path('home/',views.home,name="home"),
+path('projectUser/',views.projectUser,name="projectUser"),
+path('commentaire/delete/<int:commentaire_id>/',views.delete_commentaire,name="delete_commentaire"),
 ]

@@ -2,25 +2,33 @@
 {% include 'myapp/base.html' %}
 
 <!-- about section -->
-<section class="about_section layout_padding">
+<section class="dish_section layout_padding">
     <div class="container">
-        <div class="">
-            <div class="detail-box">
-                <div class="heading_container">
-                    <h2 class="">
-                        {{list.projetID.libelle}}
-                    </h2>
-                    <hr>
+        <div class="row">
+            <h2 class="text-center">Projects for {{list.0.userID}}</h2>
+            <div class="">
+                <div class="dish_container mt-5 justify-content-around">
+                    {% for s in list %}
+                    <div class="card" style="width: 20rem;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-center cardtitle mb-3 fst-italic">{{s.libelle}}</h5>
+                            <p class="card-text">{{s.description}}</p>
+                            <p class="card-text">Begin Date : {{s.date_debut}}</p>
+                            <p class="card-text">{{s.date_fin}}</p>
+                            <p class="card-text">Completed : {% if s.acheve == 'o'%}
+                                <i class="bi bi-check-all text-success fs-5"></i>
+                                {%else%} not yet {%endif%}
+                            </p>
+                            <a href="{% url 'equipe' id=s.id %}" class="text-dark">The team<i
+                                    class="ms-2 bi bi-people-fill"></i></a> <br><br>
+                            <a href="{% url 'details' id=s.id %}">View Details</a>
 
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
-                <p class="fst-italic cardtitle">{{list.serviceID.type}}</p>
-                <div class="mb-5 "><a href="/media/{{list.fichier}}" download class="rounded-pill">Download
-                        project <i class="bi bi-download ms-3"></i></a></div>
             </div>
         </div>
-
-    </div>
-    </div>
 </section>
 
 <!-- end about section -->

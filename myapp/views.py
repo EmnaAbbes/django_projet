@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404,redirect
-from .models import Service,Personnel,Projet,Details,Equipe
-from .forms import DemandeForm,ContactForm,UserRegistrationForm
+from .models import Service,Personnel,Projet,Details,Equipe,Demande,Commentaire
+from .forms import DemandeForm,ContactForm,UserRegistrationForm,CommentaireForm
 from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
@@ -27,8 +27,26 @@ def project(request):
     return render(request,'myapp/project.html',{'list':list})
 @login_required
 def details(request,id):
+    if request.method == "POST":
+        form = CommentaireForm(request.POST)
+        if form.is_valid():
+            commentaire = form.save(commit=False)
+            projet = get_object_or_404(Projet, id=id)
+            commentaire.projetID = projet
+            commentaire.userID=request.user
+            commentaire.save()
     list = get_object_or_404(Details, projetID=id)
-    return render(request,'myapp/projectDetails.html',{'list':list})
+    form = CommentaireForm()
+    commentaires=Commentaire.objects.filter(projetID=id)
+    print(commentaires)
+    return render(request,'myapp/projectDetails.html',{'list':list,'form':form,'commentaires':commentaires})
+
+@login_required
+def delete_commentaire(request, commentaire_id):
+    commentaire = get_object_or_404(Commentaire, id=commentaire_id)
+    if commentaire.userID == request.user:
+        commentaire.delete()
+    return redirect('details', id=commentaire.projetID.id)
 def equipe(request,id):
     equipe=Equipe.objects.get(projetID=id)
     list=Personnel.objects.filter(equipeID=equipe.id)
@@ -45,6 +63,10 @@ def newDemande(request):
     else :
         form = DemandeForm()
     return render(request,'myapp/demande.html',{'form':form})
+def projectUser(request):
+    id = request.user
+    list = Projet.objects.filter(userID=id)
+    return render(request,'myapp/projectUser.html',{'list':list})
 def Contact(request):
     if request.method == "POST" :
         form = ContactForm(request.POST,request.FILES)
